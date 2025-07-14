@@ -59,19 +59,21 @@ public:
     void deposit(float amount) {
         if (amount > 0) {
             balance += amount;
-            cout << " " << amount << "Money deposited successfully....!" << endl;
+            cout << " " << amount << " Money deposited successfully....!" << endl;
         } else {
             cout << " Invalid deposit amount!" << endl;
         }
+        cout<<"Now Balance :"<<balance<<endl;
     }
 
     void withdraw(float amount) {
         if (amount > 0 && amount <= balance) {
             balance -= amount;
-            cout << " " << amount << "Money withdrawn successfully....!" << endl;
+            cout << " " << amount << " Money withdrawn successfully....!" << endl;
         } else {
             cout << " Insufficient balance or invalid amount....!" << endl;
         }
+        cout<<"Now Balance :"<<balance<<endl;
     }
 
     bool transfer(Account &receiver, float amount) {
@@ -80,6 +82,7 @@ public:
             receiver.balance += amount;
             return true;
         }
+        cout<<"Now Balance :"<<balance<<endl;
         return false;
     }
 };
@@ -143,7 +146,7 @@ int main() {
 
     do {
         cout << "\n========  BANK MENU =========" << endl;
-        cout << "1. Create Account" << endl;
+        cout << "1. Create Bank Account" << endl;
         cout << "2. View Account" << endl;
         cout << "3. Deposit Money" << endl;
         cout << "4. Withdraw Money" << endl;
